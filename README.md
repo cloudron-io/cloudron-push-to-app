@@ -22,18 +22,22 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: my.cloudron.dev
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
       - name: Cloudron Push to App
         uses: cloudron-io/cloudron-push-to-app@latest
-        # Set environment CLOUDRON_PUSH_DESTINATION to specify the destination path in the Cloudron app
-        # this will push your GitHub repository contents to /app/data/public/ in the Cloudron app
-        env:
-            CLOUDRON_PUSH_DESTINATION: "/app/data/public"
+        with:
+          CLOUDRON_TOKEN: "${{ secrets.CLOUDRON_URL }}"
+          CLOUDRON_APP_ID: "${{ secrets.CLOUDRON_APP_ID }}"
+          CLOUDRON_URL: "${{ secrets.CLOUDRON_TOKEN }}"
+          CLOUDRON_PUSH_DESTINATION: "/app/data/public"
 
 ```
 ## Setting up Secrets
 
-In your GitHub Project, navigate got `https://github.com/$YOUR-USERNAME/$YOUR-REPO-NAME/settings/environments` add an environment named `CLOUDRON` and add the following secrets:
+In your GitHub Project, navigate got `https://github.com/$YOUR-USERNAME/$YOUR-REPO-NAME/settings/environments` add an environment named after your Cloudron instance Domain e.g. `my.demo.cloudron.io` and add the following secrets:
 - `CLOUDRON_URL`: Your Cloudron instance URL
 - `CLOUDRON_TOKEN`: Your Cloudron API token
 - `CLOUDRON_APP_ID`: The Cloudron App ID to push to
