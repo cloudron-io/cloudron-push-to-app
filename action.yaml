@@ -33,3 +33,5 @@ runs:
     CLOUDRON_APP_ID: "${{ inputs.CLOUDRON_APP_ID }}"
     CLOUDRON_URL: "${{ inputs.CLOUDRON_TOKEN }}"
     CLOUDRON_PUSH_DESTINATION: "${{ inputs.CLOUDRON_PUSH_DESTINATION }}"
+  volumes:
+    - "${{ GITHUB_WORKSPACE }}:${{ GITHUB_WORKSPACE }}:ro"
