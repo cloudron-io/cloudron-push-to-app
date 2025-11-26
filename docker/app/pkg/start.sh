@@ -12,4 +12,4 @@ else
 fi
 
 echo "==> Pushing everything in $(pwd) to ${CLOUDRON_APP_ID} on ${CLOUDRON_URL} to destination ${CLOUDRON_PUSH_DESTINATION}"
-cloudron push --app ${CLOUDRON_APP_ID} ${GITHUB_WORKSPACE} ${CLOUDRON_PUSH_DESTINATION}
+cloudron push --app ${CLOUDRON_APP_ID} ${GITHUB_WORKSPACE}/. ${CLOUDRON_PUSH_DESTINATION}
