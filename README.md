@@ -1,6 +1,6 @@
 # GitHub Action: Cloudron Push to App
 
-This GitHub Action allows you to push your GitHub code to a specified Cloudron instance app using the Cloudron CLI
+This GitHub Action allows you to push your GitHub code to a specified Cloudron instance app using the Cloudron CLI.
 
 ## Inputs
 
@@ -9,6 +9,7 @@ This GitHub Action allows you to push your GitHub code to a specified Cloudron i
 - `CLOUDRON_APP_ID`: Cloudron App ID to push the code to - this can also be a location slug e.g. `lamp` or full domain e.g. `lamp.demo.cloudron.io`
 - `CLOUDRON_CLI_VERSION`: (Optional) The version of the Cloudron CLI to use. Defaults to `6.0.0`.
 - `CLOUDRON_PUSH_DESTINATION`: (Optional) The destination path in the Cloudron app where the code should be pushed. Defaults to `/app/data/public`
+- `CLOUDRON_CREATE_APP_BACKUP`: (Optional) Whether to create a backup of the Cloudron app before pushing new code. Defaults to `true`.
 
 ## Example Usage
 
@@ -33,6 +34,7 @@ jobs:
           CLOUDRON_APP_ID: "${{ secrets.CLOUDRON_APP_ID }}"
           CLOUDRON_URL: "${{ secrets.CLOUDRON_TOKEN }}"
           CLOUDRON_PUSH_DESTINATION: "/app/data/public"
+          CLOUDRON_CREATE_APP_BACKUP: "true"
 
 ```
 ## Setting up Secrets

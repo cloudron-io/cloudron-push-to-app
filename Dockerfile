@@ -7,7 +7,8 @@ WORKDIR /app/code/
 ENV CLOUDRON_URL="my.demo.cloudron.io" \
     CLOUDRON_TOKEN="NOTOKEN" \
     CLOUDRON_APP_ID="NOAPPID" \
-    CLOUDRON_PUSH_DESTINATION="/app/data/public/"
+    CLOUDRON_PUSH_DESTINATION="/app/data/public/" \
+    CLOUDRON_CREATE_APP_BACKUP="true"
 
 COPY --from=mikefarah/yq:4.49.2 /usr/bin/yq /usr/bin/yq
 COPY docker/ /
