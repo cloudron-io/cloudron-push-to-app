@@ -11,7 +11,6 @@ ENV CLOUDRON_URL="my.demo.cloudron.io" \
 
 COPY --from=mikefarah/yq:4.49.2 /usr/bin/yq /usr/bin/yq
 COPY docker/ /
-COPY /github/workspace /github/workspace
 
 WORKDIR /app/code/
 
