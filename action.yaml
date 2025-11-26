@@ -8,6 +8,7 @@ inputs:
   CLOUDRON_URL:
     description: "Cloudron URL (e.g., https://my.demo.cloudron.io)"
     required: true
+    type: "secret"
   CLOUDRON_TOKEN:
     description: "Cloudron API Token"
     required: true
@@ -15,6 +16,7 @@ inputs:
   CLOUDRON_APP_ID:
     description: "Cloudron App ID to push the code to - this can also be a location slug e.g. lamp or full domain e.g. lamp.demo.cloudron.io"
     required: true
+    type: "secret"
   CLOUDRON-CLI-VERSION:
     description: "Version of the Cloudron CLI to use"
     default: "6.0.0"
