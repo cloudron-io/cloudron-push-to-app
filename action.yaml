@@ -21,8 +21,8 @@ inputs:
     description: "Version of the Cloudron CLI to use"
     default: "6.0.0"
   CLOUDRON_PUSH_DESTINATION:
-    description: "Destination directory to push the code into - defaults to /app/data/ if not specified"
-    default: "/app/data/public/"
+    description: "Destination directory to push the code into - defaults to /app/data/public if not specified"
+    default: "/app/data/public"
 runs:
   using: "docker"
   image: "Dockerfile"
