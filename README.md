@@ -4,7 +4,7 @@ This GitHub Action allows you to push your GitHub code to a specified Cloudron i
 
 ## Inputs
 
-- `CLOUDRON_URL`: The URL of your Cloudron instance e.g. `https://my.demo.cloudron.io`
+- `CLOUDRON_URL`: The URL of your Cloudron instance e.g. `my.demo.cloudron.io`
 - `CLOUDRON_TOKEN`: The API token for authentication with your Cloudron instance - see [Cloudron api-tokens](https://docs.cloudron.io/profile/#api-tokens)
 - `CLOUDRON_APP_ID`: Cloudron App ID to push the code to - this can also be a location slug e.g. `lamp` or full domain e.g. `lamp.demo.cloudron.io`
 - `CLOUDRON_CLI_VERSION`: (Optional) The version of the Cloudron CLI to use. Defaults to `6.0.0`.
@@ -20,9 +20,9 @@ on:
     branches:
       - main
 jobs:
-  deploy:
+  deploy-to-cloudron-app:
     runs-on: ubuntu-latest
-    environment: my.cloudron.dev
+    environment: my.demo.cloudron.io
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
@@ -37,7 +37,7 @@ jobs:
 ```
 ## Setting up Secrets
 
-In your GitHub Project, navigate got `https://github.com/$YOUR-USERNAME/$YOUR-REPO-NAME/settings/environments` add an environment named after your Cloudron instance Domain e.g. `my.demo.cloudron.io` and add the following secrets:
-- `CLOUDRON_URL`: Your Cloudron instance URL
+In your GitHub Project, navigate got `https://github.com/$YOUR-USERNAME/$YOUR-REPO-NAME/settings/environments` add an environment named after your Cloudron instance domain e.g. `my.demo.cloudron.io` and add the following secrets:
+- `CLOUDRON_URL`: Your Cloudron instance URL (e.g. `my.demo.cloudron.io`)
 - `CLOUDRON_TOKEN`: Your Cloudron API token
 - `CLOUDRON_APP_ID`: The Cloudron App ID to push to
