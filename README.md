@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cloudron Push to App
-        uses: cloudron-io/cloudron-push-to-app@dev
+        uses: cloudron-io/cloudron-push-to-app@latest
         # Set environment CLOUDRON_PUSH_DESTINATION to specify the destination path in the Cloudron app
         # this will push your GitHub repository contents to /app/data/public/ in the Cloudron app
         env:
