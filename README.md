@@ -41,3 +41,7 @@ In your GitHub Project, navigate got `https://github.com/$YOUR-USERNAME/$YOUR-RE
 - `CLOUDRON_URL`: Your Cloudron instance URL (e.g. `my.demo.cloudron.io`)
 - `CLOUDRON_TOKEN`: Your Cloudron API token
 - `CLOUDRON_APP_ID`: The Cloudron App ID to push to
+
+## Final Notes
+
+When you have followed these steps, every push to the `main` branch will automatically deploy your code to the specified Cloudron app.
