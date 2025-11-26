@@ -20,7 +20,7 @@ inputs:
     default: "6.0.0"
   CLOUDRON-PUSH-DESTINATION:
     description: "Destination directory to push the code into - defaults to /app/data/ if not specified"
-    default: "/app/data/"
+    default: "/app/data/public/"
 runs:
   using: "docker"
   image: "Dockerfile"
