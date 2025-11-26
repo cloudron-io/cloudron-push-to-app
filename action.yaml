@@ -1,0 +1,33 @@
+name: "Cloudron Push to App"
+description: "Push your code to a Cloudron app using the Cloudron CLI"
+branding:
+  icon: "upload-cloud"
+  color: "blue"
+author: "Cloudron UG"
+inputs:
+  cloudron-token:
+    description: "Cloudron API Token"
+    required: true
+    type: "secret"
+  cloudron-app-id:
+    description: "Cloudron App ID to push the code to - this can also be a location slug e.g. lamp or full domain e.g. lamp.demo.cloudron.io"
+    required: true
+  cloudron-url:
+    description: "Cloudron URL (e.g., https://my.demo.cloudron.io)"
+    required: true
+  cloudron-cli-version:
+    description: "Version of the Cloudron CLI to use"
+    default: "6.0.0"
+  cloudron-push-destination:
+    description: "Destination directory to push the code into - defaults to /app/data/ if not specified"
+    default: "/app/data/"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - "${{ inputs.cloudron-cli-version }}"
+  env:
+    CLOUDRON_TOKEN: "${{ inputs.cloudron-token }}"
+    CLOUDRON_APP_ID: "${{ inputs.cloudron-app-id }}"
+    CLOUDRON_URL: "${{ inputs.cloudron-url }}"
+    CLOUDRON_PUSH_DESTINATION: "${{ inputs.cloudron-push-destination }}"
