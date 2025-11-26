@@ -5,29 +5,29 @@ branding:
   color: "blue"
 author: "Cloudron UG"
 inputs:
-  cloudron-token:
+  CLOUDRON_URL:
+    description: "Cloudron URL (e.g., https://my.demo.cloudron.io)"
+    required: true
+  CLOUDRON_TOKEN:
     description: "Cloudron API Token"
     required: true
     type: "secret"
-  cloudron-app-id:
+  CLOUDRON_APP_ID:
     description: "Cloudron App ID to push the code to - this can also be a location slug e.g. lamp or full domain e.g. lamp.demo.cloudron.io"
     required: true
-  cloudron-url:
-    description: "Cloudron URL (e.g., https://my.demo.cloudron.io)"
-    required: true
-  cloudron-cli-version:
+  CLOUDRON-CLI-VERSION:
     description: "Version of the Cloudron CLI to use"
     default: "6.0.0"
-  cloudron-push-destination:
+  CLOUDRON-PUSH-DESTINATION:
     description: "Destination directory to push the code into - defaults to /app/data/ if not specified"
     default: "/app/data/"
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - "${{ inputs.cloudron-cli-version }}"
+    - "${{ inputs.CLOUDRON-CLI-VERSION }}"
   env:
-    CLOUDRON_TOKEN: "${{ inputs.cloudron-token }}"
-    CLOUDRON_APP_ID: "${{ inputs.cloudron-app-id }}"
-    CLOUDRON_URL: "${{ inputs.cloudron-url }}"
-    CLOUDRON_PUSH_DESTINATION: "${{ inputs.cloudron-push-destination }}"
+    CLOUDRON_TOKEN: "${{ secrets.CLOUDRON_URL }}"
+    CLOUDRON_APP_ID: "${{ secrets.CLOUDRON_APP_ID }}"
+    CLOUDRON_URL: "${{ secrets.CLOUDRON_TOKEN }}"
+    CLOUDRON_PUSH_DESTINATION: "${{ inputs.CLOUDRON-PUSH-DESTINATION }}"
