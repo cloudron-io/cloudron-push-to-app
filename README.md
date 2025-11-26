@@ -7,8 +7,8 @@ This GitHub Action allows you to push your GitHub code to a specified Cloudron i
 - `CLOUDRON_URL`: The URL of your Cloudron instance e.g. `https://my.demo.cloudron.io`
 - `CLOUDRON_TOKEN`: The API token for authentication with your Cloudron instance - see [Cloudron api-tokens](https://docs.cloudron.io/profile/#api-tokens)
 - `CLOUDRON_APP_ID`: Cloudron App ID to push the code to - this can also be a location slug e.g. `lamp` or full domain e.g. `lamp.demo.cloudron.io`
-- `CLOUDRON-CLI-VERSION`: (Optional) The version of the Cloudron CLI to use. Defaults to `6.0.0`.
-- `CLOUDRON-PUSH-DESTINATION`: (Optional) The destination path in the Cloudron app where the code should be pushed. Defaults to `/app/data/public/`
+- `CLOUDRON_CLI_VERSION`: (Optional) The version of the Cloudron CLI to use. Defaults to `6.0.0`.
+- `CLOUDRON_PUSH_DESTINATION`: (Optional) The destination path in the Cloudron app where the code should be pushed. Defaults to `/app/data/public/`
 
 ## Example Usage
 

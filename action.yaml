@@ -17,10 +17,10 @@ inputs:
     description: "Cloudron App ID to push the code to - this can also be a location slug e.g. lamp or full domain e.g. lamp.demo.cloudron.io"
     required: true
     type: "secret"
-  CLOUDRON-CLI-VERSION:
+  CLOUDRON_CLI_VERSION:
     description: "Version of the Cloudron CLI to use"
     default: "6.0.0"
-  CLOUDRON-PUSH-DESTINATION:
+  CLOUDRON_PUSH_DESTINATION:
     description: "Destination directory to push the code into - defaults to /app/data/ if not specified"
     default: "/app/data/public/"
 runs:
@@ -32,4 +32,4 @@ runs:
     CLOUDRON_TOKEN: "${{ inputs.CLOUDRON_URL }}"
     CLOUDRON_APP_ID: "${{ inputs.CLOUDRON_APP_ID }}"
     CLOUDRON_URL: "${{ inputs.CLOUDRON_TOKEN }}"
-    CLOUDRON_PUSH_DESTINATION: "${{ inputs.CLOUDRON-PUSH-DESTINATION }}"
+    CLOUDRON_PUSH_DESTINATION: "${{ inputs.CLOUDRON_PUSH_DESTINATION }}"
