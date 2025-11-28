@@ -5,8 +5,8 @@ branding:
   color: "blue"
 author: "Cloudron UG"
 inputs:
-  CLOUDRON_URL:
-    description: "Cloudron URL (e.g., https://my.demo.cloudron.io)"
+  CLOUDRON_FQDN:
+    description: "Cloudron FQDN (e.g., my.demo.cloudron.io)"
     required: true
     type: "secret"
   CLOUDRON_TOKEN:
@@ -33,8 +33,8 @@ runs:
   args:
     - "${{ inputs.CLOUDRON-CLI-VERSION }}"
   env:
-    CLOUDRON_TOKEN: "${{ inputs.CLOUDRON_URL }}"
+    CLOUDRON_TOKEN: "${{ inputs.CLOUDRON_TOKEN }}"
     CLOUDRON_APP_ID: "${{ inputs.CLOUDRON_APP_ID }}"
-    CLOUDRON_URL: "${{ inputs.CLOUDRON_TOKEN }}"
+    CLOUDRON_FQDN: "${{ inputs.CLOUDRON_FQDN }}"
     CLOUDRON_PUSH_DESTINATION: "${{ inputs.CLOUDRON_PUSH_DESTINATION }}"
     CLOUDRON_CREATE_APP_BACKUP: "${{ inputs.CLOUDRON_CREATE_APP_BACKUP }}"

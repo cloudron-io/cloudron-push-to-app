@@ -4,7 +4,7 @@ ARG CLOUDRON_CLI_VERSION=6.0.0
 
 WORKDIR /app/code/
 
-ENV CLOUDRON_URL="my.demo.cloudron.io" \
+ENV CLOUDRON_FQDN="my.demo.cloudron.io" \
     CLOUDRON_TOKEN="NOTOKEN" \
     CLOUDRON_APP_ID="NOAPPID" \
     CLOUDRON_PUSH_DESTINATION="/app/data/public/" \
